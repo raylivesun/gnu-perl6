@@ -1,0 +1,123 @@
+
+.let-file {
+  display: flex;
+  margin-left: 3em;
+  color: black;
+  flex-direction: column;
+  font-weight: bold;
+  color: goldenrod;
+  margin-bottom: 0.5em; }
+  .let-file.header {
+    font-weight: bolder;
+    margin-bottom: 1em;
+    background-color: #aaafb412; }
+
+.let-links {
+  margin-left: 3em;
+  color: navy; }
+  .let-links.header {
+    font-weight: bolder; }
+
+.let-clickable {
+  display: inline;
+  color: blue;
+  text-decoration: underline;
+  margin-left: 2em; }
+
+.let-response {
+  color: red; }
+  .let-response.header {
+    font-weight: bolder; }
+
+.let-link-file {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
+  color: navy; }
+  .let-link-file.header {
+    font-weight: bolder; }
+
+.let-link-target {
+  margin-left: 3em;
+  color: red; }
+  .let-link-target.header {
+    font-weight: bolder; }
+
+.let-link-text {
+  display: inline;
+  margin-left: 2em;
+  color: #0f640c; }
+  .let-link-text.header {
+    font-weight: bolder; }
+
+
+.image-container {
+  display: flex;
+  width: 100%;
+  height: auto; }
+  .image-container.justify-center {
+    justify-content: center; }
+  .image-container.justify-left {
+    justify-content: start; }
+  .image-container.justify-right {
+    justify-content: end; }
+
+
+.collection-generated ul {
+	list-style: disclosure-closed;
+	list-style-position: inside;
+}
+.camelia #Camelia_bug {
+    float: right;
+    margin: 1em 1em 2em 2em;
+    width:261px;
+    height: auto;
+}
+.camelia {
+     float: right;
+     margin: 1em 1em 2em 2em;
+     width:261px;
+     height: auto;
+}
+hr.bluish-dots, .yellowish-dots, .greenish-dots, .reddish-dots {
+  border: none;
+  margin: 0 3em;
+  padding: 0;
+  height: 20px;
+  background-color: transparent;
+  background-size: 25px 25px;
+  background-repeat: round no-repeat;
+  background-position: 0 center;
+}
+
+hr.bluish-dots {
+  background-image: radial-gradient(#76b8ed 30%, transparent 30%);
+}
+
+hr.yellowish-dots {
+  background-image: radial-gradient(#eded76 30%, transparent 30%);
+}
+
+hr.greenish-dots {
+  background-image: radial-gradient(#76ed87 30%, transparent 30%);
+}
+
+hr.reddish-dots {
+  background-image: radial-gradient(#ff4000 30%, transparent 30%);
+}
+
+p.quotation {
+  margin-left: 10vh;
+}
+p.quotation .author {
+  margin-left: 15vh;
+  font-weight: bold;
+}
+p.quotation .citation {
+  margin-left: 15vh;
+  font-style: italic;
+}
+
+div.flex-container {
+  display: flex;
+}

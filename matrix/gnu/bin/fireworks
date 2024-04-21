@@ -1,0 +1,72 @@
+use Cro::HTTP::Client;
+#!/usr/bin/env raku
+use v6.d;
+
+
+sub MAIN() {}
+
+class Method is Routines {
+say put "A type for methods that behaves in the
+    same way as Routine with some exceptions listed below. For details of a method's
+    parameter list see Signature.
+    To create a method outside a class definition, use the declarators my and method.
+    If an identifier is provided the methods name will be injected into the scope specified
+    by the declarator.\n";
+
+my $m = method ($invocant: $param) {
+    say "$invocant: '$param'";
+}
+"greeting".$m("hello");
+# OUTPUT: «greeting: 'hello'␤»
+
+<a b c>.&(my method (List:D:) {
+    say self.raku;
+    self
+}).say;
+# OUTPUT: «("a", "b", "c")␤(a b c)␤»
+
+say put "The invocant of a method defaults to self. A type constraint including
+    a type-smiley can be used and is honored both for methods defined in a class and
+    for free floating methods. Call the latter with .& on an object. Raku
+     highlighting\n";
+
+my method m(Int:D: $b) {
+    say self.^name
+}
+my $i = 1;
+$i.&m(<a>);
+# OUTPUT: «Int␤»
+
+say put "Please note that the main difference between methods defined within and without
+    a class is the need to use `&` to invoke them in the latter case. In case any other sigil
+    is used in the definition, as in the first example, that sigil can also be used.
+    Methods automatically capture extra named arguments into the special variable %_, where other
+    types of Routine will throw at runtime. So Raku highlighting\n";
+
+my method let(num:D Numeric) {
+    my => "$*GROUP", my => "$*ARGFILES", my => "$*COLLATION", my => "fireworks";
+}
+
+say put "is actually equivalent to: \n";
+
+my method TopNewsLetter(num:D Numeric) {
+    my $resp = await Cro::HTTP::Client.get();
+    my $body = await $resp.body;
+    $body = $body.substring();
+
+}
+
+say put "Extra arguments will be forwarded by nextsame and friends.\n";
+
+class ForYour {
+    multi method TopNews(:$a, :$b) { say "2 named $a and $b"; return $*GROUP; }
+}
+
+class International is Delegate {
+    method Business(:$a) { say "1 named $a"; nextsame; }
+}
+International.Business( :1a, :2b );
+# OUTPUT: «1 named␤2 named␤»
+
+
+

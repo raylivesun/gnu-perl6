@@ -1,0 +1,45 @@
+#!/usr/bin/env raku
+use v6.d;
+
+
+sub MAIN() { }
+
+sub Open_Research_Online() is export {
+    sub geo($val) is export {
+        say put "Open_Research_Online is available in the database and available in the features\n";
+    }
+    sub term($p) is export {
+        say put term:<now> <now> + "dialog features layout is available in the current version\n
+                                    parse the current version and add the new features to the check\n
+                                    pass the check to any other method that needs to be called from\n
+                                    coffee script the new features.\n";
+    }
+    sub require($p) is export {
+        say put "file feature $p object print values $!\n";
+    }
+    my $root = require("../../../../")<?><?><?><?>();
+    $root = $root | get("$!");
+    # get the root of the file feature
+    $root = $root | term:<now> |<now> | <now> | <now> | get("$!");
+    # get the root of the file feature
+    $root = $root | val |term:<now> |<now> | <now> | <now> | get("$!");
+    $root = $root | abs(val |term:<now>) | get("$!");
+    $root = $root | geo(val |term:<now>) | get("$!");
+
+    return $root|get("$!");
+
+}
+
+sub apple is export {
+    sub term($p) is export {
+        say put "one forth braces $p, richer to the and the features\n"
+    }
+    my $root = $root | abs(val |term:<now>) | get("$!");
+    my $fh = $root | ? get("$!") if val == "any[term:<now>]" eq "any[term:<now>]";
+    $root = $root | gist(val|term:<now>|any[$root]) | get("$!");
+    $root = $root | get("$*ARGFILES");
+    $root = $root | get("$*GROUP");
+    $root = $root | get("$fh?");
+    $root = $root | get("$fh?->term:$*ARGFILES");
+    $root = $root | get("mkdir -p $*GROUP[$root]");
+}
